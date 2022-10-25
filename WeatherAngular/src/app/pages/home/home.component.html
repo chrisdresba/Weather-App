@@ -1,0 +1,8 @@
+<app-spinner></app-spinner>
+<div id="container" class="col-12 color-change-2x">
+    <div class="box col-12" style='background: url({{background}}); background-repeat: no-repeat; background-position:center;background-size: cover'> 
+      <app-search (submitted)="onSearch($event)" id="buscador"></app-search>
+      <div class="city" *ngIf="weather$  | async as weather">hola </div>
+    </div>
+    <app-weather class="weather" *ngIf="weather$  | async as weather" [weather]="weather"></app-weather>
+</div>

@@ -1,0 +1,25 @@
+#container{
+	width: 100vw;
+	min-height: 5vh;
+	background-color: rgba(1, 1, 1, 0.9);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    flex-direction: column;
+}
+
+a{
+    color: aliceblue;
+	text-decoration: none !important;
+}
+
+.info{
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+@media only screen and (min-width: 250px) and (max-width: 400px) {
+    a,p{
+        font-size: 12px;
+    }
+}
