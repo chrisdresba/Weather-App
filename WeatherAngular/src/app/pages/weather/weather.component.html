@@ -1,10 +1,10 @@
-<div class="card col-md-6">
+<div class="card col-md-6" id="container">
   <div class="card__image">
     <div class="card__city"> {{weather.name}} , {{weather.sys.country}} </div>
   </div>
   <div class="card__box">
     <div class="card__temp">
-     <!-- <img src="{{BASE_URL}}/{{weather.weather[0].icon}}@2x.png" [alt]="weather.name">  -->
+      <!-- <img src="{{BASE_URL}}/{{weather.weather[0].icon}}@2x.png" [alt]="weather.name">  -->
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/{{weather.weather[0].icon}}.svg" alt="">
       <p>{{weather.main.temp | number:'1.0-0'}}&#8451;</p>
     </div>
@@ -14,11 +14,11 @@
         <div class="card__stat--stat info">{{weather.main.pressure}} <sup>hPa</sup></div>
       </div>
       <div class="card__stat width-33">
-        <span>Humedad</span> 
+        <span>Humedad</span>
         <div class="card__stat--stat info"> {{weather.main.humidity}}<sup>%</sup></div>
       </div>
       <div class="card__stat width-33 no-border">
-        <span>Vientos</span> 
+        <span>Vientos</span>
         <div class="card__stat--stat info"> {{weather.wind.speed}} <sup>m/s</sup></div>
       </div>
     </div>

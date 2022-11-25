@@ -1,8 +1,15 @@
 <app-spinner></app-spinner>
-<div id="container" class="col-12 color-change-2x">
-    <div class="box col-12" style='background: url({{background}}); background-repeat: no-repeat; background-position:center;background-size: cover'> 
-      <app-search (submitted)="onSearch($event)" id="buscador"></app-search>
-      <div class="city" *ngIf="weather$  | async as weather">hola </div>
-    </div>
-    <app-weather class="weather" *ngIf="weather$  | async as weather" [weather]="weather"></app-weather>
+<div id="container" class="col-12">
+  <div class="box col-12 kenburns-top"
+    style='background: url({{background}}); background-repeat: no-repeat; background-position:center;background-size: cover'>
+    <div id="buscador">
+      <app-search (submitted)="onSearch($event)" class="kenburns-bottom search"></app-search>
+      <a href="#pronostico" class="city" *ngIf="city">
+        <div><span>última busqueda:</span></div>
+        <div class="boxCity">{{city}} {{country}}</div>
+      </a>
+  </div>
+</div>
+<app-weather id="pronostico" class="weather" *ngIf="weather$  | async as weather" [weather]="weather"></app-weather>
+<app-list-cities class="listaCiudades"></app-list-cities>
 </div>

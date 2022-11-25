@@ -10,10 +10,12 @@ export class SpinnerComponent implements OnInit {
 
   public isLoading = this.service.isLoading;
 
-  constructor(private readonly service : SpinnerService) {
+  constructor(private service : SpinnerService) {
+
    }
 
   ngOnInit(): void {
+
   }
 
 }

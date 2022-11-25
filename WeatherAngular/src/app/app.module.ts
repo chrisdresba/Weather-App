@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { WeatherInterceptor } from './shared/interceptors/weather.interceptor';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ListCitiesComponent } from './components/list-cities/list-cities.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { FooterComponent } from './components/footer/footer.component';
     WeatherComponent,
     NotFoundComponent,
     FooterComponent,
+    ListCitiesComponent,
   ],
   imports: [
     BrowserModule,

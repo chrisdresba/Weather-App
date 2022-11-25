@@ -4,6 +4,10 @@
   font-weight: 600;
 }
 
+#container{
+background: transparent;
+}
+
 .card {
   background-color: #fff;
   margin-top: 2rem;
@@ -38,7 +42,7 @@
   .card__box{
     display: flex;
     flex-direction: column;
-    background: #e9eaea;
+    background:rgba(249, 249, 249, 0.7);
   }
   .card__temp{
     width: 100%;
@@ -46,6 +50,7 @@
     flex-direction: row;
     margin-top: 10px;
     margin-bottom: 10px;
+ 
   }
 
   .card__main {
