@@ -29,12 +29,14 @@ interface Sys {
     sunset: number;
 }
 
+
 export interface WeatherData {
     weather: Weather[];
     main: Main;
     wind: Wind;
     sys: Sys;
     visibility: any;
+    dt_txt?:any;
     name: string;
 }
 

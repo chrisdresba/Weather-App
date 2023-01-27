@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+#container {
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    border: 0;
+}
+
+.box {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.card__box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.card__temp {
+    max-width: 150px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+    background: #e9eef299;
+    border-radius: 10px;
+}
+
+.card__temp:hover {
+    background: #d1cccccf;
+    transform: scale(1.05);
+}
+
+img {
+    width: 80px;
+    margin: auto;
+}
+
+p {
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Righteous', cursive;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 720px) {
+    #container {
+        width: 100vw;
+    }
+
+    .box {
+        justify-content: space-evenly;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .card__box {
+        width: 80px;
+        margin: 5px;
+    }
+
+    .card__temp {
+        padding: 5px;
+    }
+}
+
+@media only screen and (min-width: 260px) and (max-width: 479px) {
+    #container {
+        width: 100vw;
+    }
+
+    .box {
+        justify-content: space-evenly;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .card__box {
+        width: 18vw;
+        margin: 5px;
+        font-size: 0.8em;
+    }
+
+    .card__temp {
+        padding: 5px;
+    }
+}

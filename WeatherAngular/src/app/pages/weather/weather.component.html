@@ -4,8 +4,7 @@
   </div>
   <div class="card__box">
     <div class="card__temp">
-      <!-- <img src="{{BASE_URL}}/{{weather.weather[0].icon}}@2x.png" [alt]="weather.name">  -->
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/{{weather.weather[0].icon}}.svg" alt="">
+      <img src="./assets/images/{{weather.weather[0].icon}}.png" alt="">
       <p>{{weather.main.temp | number:'1.0-0'}}&#8451;</p>
     </div>
     <div class="card__stats">

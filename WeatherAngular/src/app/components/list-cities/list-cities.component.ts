@@ -9,29 +9,16 @@ import { WeatherService } from 'src/app/shared/services/weather.service';
 })
 export class ListCitiesComponent implements OnInit {
 
-  //public weather!: WeatherData;
-  public cities: WeatherData[]=[];
 
-  constructor(public weatherSvc:WeatherService) { }
+  public cities: WeatherData[] = [];
+  public listCities: string[] = ['barcelona', 'bariloche', 'berlin', 'lima', 'quito', 'rio de janeiro'];
+  constructor(public weatherSvc: WeatherService) { }
 
   ngOnInit(): void {
-    this.weatherSvc.getWeatherByName('barcelona').subscribe(item=>{
-      this.cities.push(item);
-    })
-    this.weatherSvc.getWeatherByName('bariloche').subscribe(item=>{
-      this.cities.push(item);
-    })
-    this.weatherSvc.getWeatherByName('berlin').subscribe(item=>{
-      this.cities.push(item);
-    })
-    this.weatherSvc.getWeatherByName('lima').subscribe(item=>{
-      this.cities.push(item);
-    })
-    this.weatherSvc.getWeatherByName('quito').subscribe(item=>{
-      this.cities.push(item);
-    })
-    this.weatherSvc.getWeatherByName('rio de janeiro').subscribe(item=>{
-      this.cities.push(item);
+    this.listCities.forEach(city => {
+      this.weatherSvc.getWeatherByName(city).subscribe(item => {
+        this.cities.push(item);
+      })
     })
   }
 

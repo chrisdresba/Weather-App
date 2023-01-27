@@ -23,6 +23,7 @@ Puede acceder al proyecto desde el siguiente [link](https://weather-appangular.w
 
 ![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home02.png?raw=true?raw=true)
 
+![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home02b.png?raw=true?raw=true)
 
 **Búsqueda** 
 

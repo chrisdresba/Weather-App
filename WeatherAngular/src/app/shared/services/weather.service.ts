@@ -16,10 +16,24 @@ export class WeatherService {
         return this.http.get<WeatherData>(`${this.API_URL}/weather`, { params });
 
     }
+
+    public getWeatherByName5Days(city: string): Observable<WeatherData> {
+        const params = new HttpParams()
+            .set('q', city)
+        return this.http.get<WeatherData>(`${this.API_URL}/forecast`, { params });
+    }
+
     public getWeatherByCoords(coord: Coord): Observable<WeatherData> {
         const params = new HttpParams()
             .set('lat', coord.latitude)
             .set('lon', coord.longitude)
         return this.http.get<WeatherData>(`${this.API_URL}/weather`, { params });
+    }
+
+    public getWeatherByCoords5Days(coord: Coord): Observable<WeatherData> {
+        const params = new HttpParams()
+            .set('lat', coord.latitude)
+            .set('lon', coord.longitude)
+        return this.http.get<WeatherData>(`${this.API_URL}/forecast`, { params });
     }
 }
