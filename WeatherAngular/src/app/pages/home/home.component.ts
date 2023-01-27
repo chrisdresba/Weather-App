@@ -65,20 +65,7 @@ export class HomeComponent implements OnInit {
         this.weather5Days$ = item.list;
         this.weather5DaysAux = item.list;
         this.weather5Days$ = this.weather5Days$.filter(item => item.dt_txt.substring(item.dt_txt.length - 8, item.dt_txt.length) == '12:00:00');
-
-        for (let index = 0; index < this.weather5Days$.length; index++) {
-
-          this.weather5DaysAux.forEach(data => {
-            if (data.dt_txt.substring(0, 10) == this.weather5Days$[index].dt_txt.substring(0, 10)) { //compare date
-              if (data.main.temp_min < this.weather5Days$[index].main.temp_min) { //compare temp min
-                this.weather5Days$[index].main.temp_min = data.main.temp_min;
-              }
-              if (data.main.temp_max > this.weather5Days$[index].main.temp_max) { //compare temp max
-                this.weather5Days$[index].main.temp_max = data.main.temp_max;
-              }
-            }
-          });
-        }
+        this.filterTempMaxMin();
       })
 
     } else {
@@ -101,7 +88,9 @@ export class HomeComponent implements OnInit {
       this.data = this.weatherSvc.getWeatherByCoords5Days(coords);
       this.data.subscribe(item => {
         this.weather5Days$ = item.list;
-        this.weather5Days$ = this.weather5Days$.filter(item => item.dt_txt.substring(item.dt_txt.length - 8, item.dt_txt.length) == '12:00:00')
+        this.weather5DaysAux = item.list;
+        this.weather5Days$ = this.weather5Days$.filter(item => item.dt_txt.substring(item.dt_txt.length - 8, item.dt_txt.length) == '12:00:00');
+        this.filterTempMaxMin();
       })
     } catch (error) {
     }
@@ -109,6 +98,22 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getScreenHeight = window.innerHeight;
+  }
+
+  filterTempMaxMin(){
+    for (let index = 0; index < this.weather5Days$.length; index++) {
+
+      this.weather5DaysAux.forEach(data => {
+        if (data.dt_txt.substring(0, 10) == this.weather5Days$[index].dt_txt.substring(0, 10)) { //compare date
+          if (data.main.temp_min < this.weather5Days$[index].main.temp_min) { //compare temp min
+            this.weather5Days$[index].main.temp_min = data.main.temp_min;
+          }
+          if (data.main.temp_max > this.weather5Days$[index].main.temp_max) { //compare temp max
+            this.weather5Days$[index].main.temp_max = data.main.temp_max;
+          }
+        }
+      });
+    }
   }
 
 }
