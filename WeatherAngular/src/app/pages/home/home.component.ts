@@ -100,17 +100,14 @@ export class HomeComponent implements OnInit {
     this.getScreenHeight = window.innerHeight;
   }
 
-  filterTempMaxMin(){
+  filterTempMaxMin() {
     for (let index = 0; index < this.weather5Days$.length; index++) {
 
       this.weather5DaysAux.forEach(data => {
         if (data.dt_txt.substring(0, 10) == this.weather5Days$[index].dt_txt.substring(0, 10)) { //compare date
-          if (data.main.temp_min < this.weather5Days$[index].main.temp_min) { //compare temp min
-            this.weather5Days$[index].main.temp_min = data.main.temp_min;
-          }
-          if (data.main.temp_max > this.weather5Days$[index].main.temp_max) { //compare temp max
-            this.weather5Days$[index].main.temp_max = data.main.temp_max;
-          }
+          data.main.temp_min < this.weather5Days$[index].main.temp_min ? this.weather5Days$[index].main.temp_min = data.main.temp_min : false;  //compare temp min
+
+          data.main.temp_max > this.weather5Days$[index].main.temp_max ? this.weather5Days$[index].main.temp_max = data.main.temp_max : false; //compare temp max
         }
       });
     }
