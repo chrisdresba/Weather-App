@@ -17,22 +17,22 @@ Puede acceder al proyecto desde el siguiente [link](https://weather-appangular.w
 
 *Al iniciar podemos permitir obtener nuestra geolocalización para ubicar nuestra ciudad*    
 
-![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home00.png?raw=true?raw=true)
+![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home_00.png?raw=true?raw=true)
 
-![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home01.png?raw=true?raw=true)
+![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home_01.png?raw=true?raw=true)
 
-![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home02.png?raw=true?raw=true)
+![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home_02.png?raw=true?raw=true)
 
-![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home02b.png?raw=true?raw=true)
+![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home_02b.png?raw=true?raw=true)
 
 **Búsqueda** 
 
 *Desde un input de búsqueda podremos ingresar una ciudad*    
 
-![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home03.png?raw=true?raw=true)
+![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home_03.png?raw=true?raw=true)
 
 *De esta manera podremos visualizar la información del clima de la ciudad ingresada*    
 
-![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home04.png?raw=true?raw=true)
+![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home_04.png?raw=true?raw=true)
 
-![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home05.png?raw=true?raw=true)
+![](https://github.com/chrisdresba/Weather-App/blob/main/WeatherAngular/images/home_05.png?raw=true?raw=true)
