@@ -35,7 +35,6 @@ export class HomeComponent implements OnInit {
   constructor(
     private readonly weatherSvc: WeatherService,
     private readonly geoLocationSvc: GeoLocationService,
-    private router: Router,
     public viewportScroller: ViewportScroller
   ) {
     this.background = 'assets/images/background0.webp';
@@ -44,17 +43,26 @@ export class HomeComponent implements OnInit {
       longitude: 0,
     };
     window.scroll(0, 0);
-    //  this.viewImageBackground();
+    this.viewImageBackground();
     if (navigator?.geolocation) {
       this.getLocation();
     }
   }
 
+  ngOnInit(): void {
+    this.getScreenHeight = window.innerHeight;
+    setTimeout(() => {
+      this.view = false;
+    }, 2000);
+  }
+
+  //Random Background
   public viewImageBackground() {
     let number = Math.floor(Math.random() * (5 + 1));
     this.background = 'assets/images/background' + number + '.webp';
   }
 
+  //Search Input
   async onSearch(city: string) {
     if (city.length > 3) {
       this.cities = await this.weatherSvc.searchCities(city);
@@ -64,6 +72,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  //function activated by the selected city
   searchCity(city: any): void {
     this.coord.latitude = city.lat;
     this.coord.longitude = city.lng;
@@ -71,6 +80,7 @@ export class HomeComponent implements OnInit {
     this.cities = [];
   }
 
+  //forecast by selected city
   selectCity(coords: Coord, name: string): void {
     try {
       this.weather$ = this.weatherSvc.getWeatherByCoords(coords);
@@ -95,6 +105,7 @@ export class HomeComponent implements OnInit {
     } catch (error) {}
   }
 
+  //forecast by geolocation
   private async getLocation(): Promise<void> {
     try {
       const { coords } = await this.geoLocationSvc.getCurrentPosition();
@@ -118,13 +129,6 @@ export class HomeComponent implements OnInit {
         this.filterTempMaxMin();
       });
     } catch (error) {}
-  }
-
-  ngOnInit(): void {
-    this.getScreenHeight = window.innerHeight;
-    setTimeout(() => {
-      this.view = false;
-    }, 2000);
   }
 
   //filter the max and min temperature

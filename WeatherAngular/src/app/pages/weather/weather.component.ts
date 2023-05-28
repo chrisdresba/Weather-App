@@ -4,7 +4,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { WeatherData } from './../..//shared/interfaces/weather.interface';
+import { WeatherData } from './../../shared/interfaces/weather.interface';
 
 @Component({
   selector: 'app-weather',

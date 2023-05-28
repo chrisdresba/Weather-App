@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter, map, tap } from 'rxjs';
 
 @Component({
@@ -17,7 +17,7 @@ import { debounceTime, distinctUntilChanged, filter, map, tap } from 'rxjs';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  inputSearch = new FormControl('');
+  inputSearch = new UntypedFormControl('');
   @Output() submitted = new EventEmitter<string>();
 
   private keyDownInterval: any;
