@@ -15,6 +15,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListCitiesComponent } from './components/list-cities/list-cities.component';
 import { W5daysComponent } from './components/w5days/w5days.component';
+import { NameCityPipe } from './shared/pipes/nameCity';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { W5daysComponent } from './components/w5days/w5days.component';
     FooterComponent,
     ListCitiesComponent,
     W5daysComponent,
+    NameCityPipe,
   ],
   imports: [
     BrowserModule,

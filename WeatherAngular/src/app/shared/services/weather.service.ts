@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Coord, WeatherData } from '../interfaces/weather.interface';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
+const axios = require("axios").default;
 
 @Injectable({ providedIn: 'root' })
 export class WeatherService {
@@ -36,4 +37,45 @@ export class WeatherService {
             .set('lon', coord.longitude)
         return this.http.get<WeatherData>(`${this.API_URL}/forecast`, { params });
     }
-}
+
+    ///
+
+    get paramsMapbox() {
+        return {
+          access_token: environment.MAPBOX_KEY,
+          language: "es",
+          limit: 5,
+        };
+      }
+    
+      async searchCities(city: string) {
+        // http request
+        try {
+          const instance = axios.create({
+            baseURL: `https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json`,
+            params: this.paramsMapbox,
+          });
+    
+          const response = await instance.get();
+          return response.data.features.map((place:any) => ({
+            id: place.id,
+            name: place.place_name,
+            lng: place.center[0],
+            lat: place.center[1],
+          }));
+        } catch (error) {
+          return []; // return places
+        }
+      }
+
+      async listCities (cities = []){
+        const choices = cities.map((city : any, i) => {
+          const idx = `${i + 1}.`;
+          return {
+            value: city.id,
+            name: `${idx} ${city}`,
+          };
+        });
+      }
+    
+    }

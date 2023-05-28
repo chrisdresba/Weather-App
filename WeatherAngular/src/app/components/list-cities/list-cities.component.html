@@ -5,7 +5,7 @@
     <div class="box list-group-item" *ngFor="let weather of cities">
         <div class="card__city city" style="width: 30%;"> {{weather.name}} , {{weather.sys.country}} </div>
         <div class="temp">{{weather.main.temp | number:'1.0-0'}}&#8451;</div>
-        <img src="./assets/images/{{weather.weather[0].icon}}.png" alt="">
+        <img loading="lazy" src="./assets/images/{{weather.weather[0].icon}}.png" alt="">
         <div class="card__stat--stat info"> {{weather.main.humidity}}<sup>%</sup></div>
         <div class="card__stat--stat info"> {{weather.wind.speed}} <sup>m/s</sup></div>
     </div>

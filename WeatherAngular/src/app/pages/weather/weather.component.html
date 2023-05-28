@@ -1,10 +1,10 @@
 <div class="card col-md-6" id="container">
   <div class="card__image">
-    <div class="card__city"> {{weather.name}} , {{weather.sys.country}} </div>
+    <div class="card__city"> {{city}} , {{country}} </div>
   </div>
   <div class="card__box">
     <div class="card__temp">
-      <img src="./assets/images/{{weather.weather[0].icon}}.png" alt="">
+      <img loading="lazy" src="./assets/images/{{weather.weather[0].icon}}.png" alt="">
       <p>{{weather.main.temp | number:'1.0-0'}}&#8451;</p>
     </div>
     <div class="card__stats">

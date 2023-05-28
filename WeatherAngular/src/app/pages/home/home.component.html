@@ -2,18 +2,21 @@
 <div id="spin" class="fade-out" *ngIf="view">
   <img class="bounce-in-bottom" src="./../../../assets/images/clima2.png" alt="">
 </div>
-<div id="container" class="col-12" *ngIf="!view">
-  <div class="box col-12 kenburns-top"
-    style='background: url({{background}}); background-repeat: no-repeat; background-position:center;background-size: cover'>
+<div id="container" class="col-12" *ngIf="!view" [style.background-image]="'url(assets/images/fondo.webp)'">
+  <div class="box col-12 kenburns-top" [style.background-image]="'url(assets/images/background0.webp)'">
     <div id="buscador">
       <app-search (submitted)="onSearch($event)" class="kenburns-bottom search"></app-search>
+      <ul>
+        <li *ngFor="let item of cities" (click)="searchCity(item)">{{ item.name | nameCity }}</li>
+      </ul>
       <a href="#pronostico" class="city" *ngIf="city">
         <div><span>última busqueda:</span></div>
         <div class="boxCity">{{city}} {{country}}</div>
       </a>
     </div>
   </div>
-  <app-weather id="pronostico" class="weather" *ngIf="weather$  | async as weather" [weather]="weather"></app-weather>
+  <app-weather id="pronostico" class="weather" *ngIf="weather$  | async as weather" [weather]="weather" [city]="city"
+    [country]="country"></app-weather>
   <app-w5days *ngIf="weather$" [weather5Days]="weather5Days$"></app-w5days>
   <app-list-cities class="listaCiudades"></app-list-cities>
 </div>
